@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ITodo } from 'src/app/todo.model';
 import baseTodos from '../../../todo.model';
 @Component({
@@ -8,12 +8,10 @@ import baseTodos from '../../../todo.model';
 })
 export class AddTodoComponent implements OnInit {
   todo: string;
-  addTodo = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
   onAddTodo() {
-    console.log(this.todo);
     baseTodos.push({ title: this.todo });
   }
 }
